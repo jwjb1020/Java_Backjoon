@@ -1,0 +1,16 @@
+package Backjoon.조건문;
+
+import java.util.Scanner;
+
+public class 놀람 {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		String a = sc.next();
+		
+		
+		System.out.println(a+"??!");
+		
+		
+	}
+
+}
