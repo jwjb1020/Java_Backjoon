@@ -26,12 +26,7 @@ public class Boom {
 
 		char[] charArr = value.toCharArray(); // 문자열을 각각의 인덱스가 있는 문자 배열로 변경
 
-		// 배열을 리스트로 바꿈
-		// List<Character> valuelist = new ArrayList<>();
-//		for (int i = 0; i < charArr.length; i++) {
-//			valuelist[i] = charArr[i];
-//			
-//		}
+
 
 		String boom = sc.next(); // 삭제할 문자열 넣는 스캐너
 
