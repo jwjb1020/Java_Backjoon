@@ -4,19 +4,25 @@ import java.util.Scanner;
 
 public class Boom {
 
-	static char[] remove(char[] charArr, char[] boomArr) {
-		for (int i = 0; i < charArr.length; i++) {
-			for (int j = 0; j < boomArr.length; j++) {
-				if (boomArr[j] == charArr[i]) {
-					charArr[i] = '-';
+	static String remove(char[] charArr, char[] boomArr) {
+		StringBuilder sb = new StringBuilder();
 
+		for (char c : charArr) {
+			boolean isBoom = false;
+			for (char a : boomArr) {
+				if (c == a) {
+					isBoom = true;
+					break;
 				}
 			}
-
+			if (!isBoom) {
+				sb.append(c);
+			}
 		}
-		
-		return charArr;
-		
+		if (sb.toString().length() == 0) {
+			sb = new StringBuilder("FRULA");
+		}
+		return sb.toString();
 
 	}
 
@@ -26,20 +32,11 @@ public class Boom {
 
 		char[] charArr = value.toCharArray(); // 문자열을 각각의 인덱스가 있는 문자 배열로 변경
 
-
-
 		String boom = sc.next(); // 삭제할 문자열 넣는 스캐너
 
 		char[] boomArr = boom.toCharArray(); // 문자열을 문자 배열로
 
-		remove(charArr, boomArr);
-		String s = new String(charArr);
-		  if (s.matches("^(-)+$")) {
-	            s = "FRULA";
-	        }
-		
-		
-		System.out.println(s.replaceAll("-", ""));
+		System.out.println(remove(charArr, boomArr));
 	}
 
 }
